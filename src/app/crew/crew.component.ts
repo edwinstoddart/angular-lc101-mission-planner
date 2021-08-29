@@ -18,6 +18,11 @@ export class CrewComponent implements OnInit {
   ngOnInit() { }
 
   add(memberName: string, isFirst: boolean) {
+    for (let i = 0; i < this.crew.length; i++) {
+      if (this.crew[i]['name'] === memberName) {
+        return;
+      }
+    }
     this.crew.push({name: memberName, firstMission: isFirst});
   }
   remove(member: object) {
