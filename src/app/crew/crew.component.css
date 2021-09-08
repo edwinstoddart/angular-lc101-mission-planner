@@ -6,6 +6,9 @@ li:hover {
     height: 275px;
     width: auto;
 }
+.selected {
+    color: green;
+}
 
 img {
     width: auto;
