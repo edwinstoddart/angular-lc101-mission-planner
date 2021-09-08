@@ -24,17 +24,11 @@ export class CrewComponent implements OnInit {
   ngOnInit() { }
 
   addCrewMember(candidate: object) {
-    let crewIndex: number;
-    for (let i = 0; i < this.candidates.length; i++) {
-      if (candidate['name'] === this.candidates[i]['name']) {
-        this.inCrew = true;
-        crewIndex = i;
-      }
-    }
+    if (this.crew.indexOf(candidate) > -1) { this.inCrew = true; }
     if (this.crew.length < 3 && this.inCrew === false) {
       this.crew.push(candidate);
     } else {
-      this.crew.splice(crewIndex, 1);
+      this.crew.splice(this.crew.indexOf(candidate), 1);
     }
     this.inCrew = false;
   }
