@@ -5,6 +5,11 @@
 .activeButton {
     background-color: yellow;
 }
+.nearMaxMass {
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+}
 
 button {
     margin: 2px;
