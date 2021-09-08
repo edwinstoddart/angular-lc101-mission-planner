@@ -1,7 +1,17 @@
 <div class="displayBox">
     <h3>Possible Experiments</h3>
     <ul>
-      <li *ngFor="let experiment of experiments">{{experiment}}</li>
+      <li *ngFor="let experiment of experiments"
+      (click)='addExperiment(experiment)'
+      [class.selected]='approvedExperiments.indexOf(experiment) > -1'>
+        {{experiment}}
+      </li>
     </ul>
 </div>
 <hr>
+<div class="displayBox">
+  <h3>Approved Experiments</h3>
+  <ul>
+    <li *ngFor='let approved of approvedExperiments'>{{approved}}</li>
+  </ul>
+</div>

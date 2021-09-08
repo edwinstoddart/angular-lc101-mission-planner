@@ -27,6 +27,8 @@ export class EquipmentComponent implements OnInit {
 
   // Code your addItem function here:
   addItem(equipment: object) {
+    if (this.cargoHold.indexOf(equipment, this.cargoHold.indexOf(equipment) + 1) > -1) { return; }
+
     this.cargoHold.push(equipment);
     this.cargoMass += equipment['mass'];
     if (this.maximumAllowedMass - this.cargoMass <= 200) {
@@ -34,6 +36,9 @@ export class EquipmentComponent implements OnInit {
     } else {
       return false;
     }
+  }
+  removeItem(equipment: object) {
+    this.cargoHold.splice(this.cargoHold.indexOf(equipment), 1);
   }
   emptyHold() {
     this.cargoHold = [];

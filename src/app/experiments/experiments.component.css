@@ -2,6 +2,9 @@
     height: 275px;
     width: auto;
 }
+.selected {
+    color: green;
+}
 
 h3 {
     text-align: center;
