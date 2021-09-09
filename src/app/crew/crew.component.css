@@ -1,5 +1,9 @@
 li:hover {
     cursor: pointer;
+    list-style-type: disc;
+}
+li {
+    list-style-type: circle;
 }
 
 .displayBox {

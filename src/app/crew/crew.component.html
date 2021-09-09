@@ -12,14 +12,17 @@
 <div class="displayBox">
     <h3>
         Crew
-        <span *ngIf='crew.length === 3'>Full</span>
+        <span *ngIf='crew.length >= 3'>Full</span>
     </h3>
     <ol>
         <li *ngFor="let astronaut of crew" (mouseover)='mouseSelect = astronaut' (mouseout)='mouseSelect = null'>{{astronaut.name}}</li>
     </ol>
     <!-- Add an img tag here to display astronaut photos. -->
-    <img class='img'
-    src='{{mouseSelect.photo}}'
-    alt='{{mouseSelect.name}} picture missing.'
-    *ngIf='mouseSelect !== null'>
+    <span *ngIf='mouseSelect !== null'>
+        <img class='img'
+        src='{{mouseSelect.photo}}'
+        alt='{{mouseSelect.name}} picture missing.'>
+        <br>
+        Preferred Weapon: {{mouseSelect.weapon}}
+    </span>
 </div>
